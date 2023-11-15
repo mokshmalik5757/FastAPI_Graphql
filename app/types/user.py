@@ -1,5 +1,5 @@
 import strawberry
-from app.models.user import users
+from app.models.index import users
 from app.connection.db import conn
 
 @strawberry.type
