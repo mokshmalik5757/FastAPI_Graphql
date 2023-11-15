@@ -4,6 +4,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 from app.controllers.index import user
+from app.controllers.user import graphql_app
 
 app = FastAPI(title="FastAPI GraphQl", debug=True)
 
@@ -28,3 +29,4 @@ def server_health_check():
     return {"Message": "Server working fine"}
 
 app.include_router(user)
+app.include_router(graphql_app, prefix="/graphql")
