@@ -3,5 +3,6 @@ uvicorn[standard]
 sqlalchemy
 pymysql
 cryptography
+strawberry-graphql[fastapi]
 python-multipart
 cookiecutter

@@ -3,9 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
-from .routers import api_routes
+from app.controllers.index import user
 
-app = FastAPI(title="FastAPI template", debug=True)
+app = FastAPI(title="FastAPI GraphQl", debug=True)
 
 origins = ["*"]
 app.add_middleware(
@@ -27,4 +27,4 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 def server_health_check():
     return {"Message": "Server working fine"}
 
-app.include_router(api_routes.router)
+app.include_router(user)
